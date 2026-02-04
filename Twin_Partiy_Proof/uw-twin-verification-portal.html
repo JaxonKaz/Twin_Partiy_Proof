@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UW Official Twin Verification Portal</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        
+        .certificate-font {
+            font-family: 'Crimson Text', serif;
+        }
+        
+        .parchment {
+            background: linear-gradient(135deg, #FFF8E1 0%, #FFFBF0 100%);
+            border: 2px solid #D4AF37;
+            box-shadow: inset 0 0 30px rgba(212, 175, 55, 0.1);
+        }
+        
+        .seal {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: radial-gradient(circle, #FFD54F 0%, #FFA000 100%);
+            border: 4px solid #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            position: relative;
+        }
+        
+        .seal::before {
+            content: '';
+            position: absolute;
+            width: 90%;
+            height: 90%;
+            border-radius: 50%;
+            border: 2px dashed #000;
+        }
+        
+        .loading-bar {
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 20px rgba(255, 213, 79, 0.5); }
+            50% { box-shadow: 0 0 40px rgba(255, 213, 79, 0.8); }
+        }
+        
+        .glow {
+            animation: pulse-glow 2s infinite;
+        }
+        
+        .grid-pattern {
+            background-image: 
+                linear-gradient(rgba(255, 213, 79, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 213, 79, 0.1) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    </style>
+</head>
+<body class="bg-gray-50 min-h-screen">
+    <!-- Header -->
+    <div class="bg-black text-white py-8 px-4 border-b-4 border-yellow-500">
+        <div class="max-w-4xl mx-auto">
+            <div class="flex items-center justify-center mb-4">
+                <div class="w-16 h-16 bg-yellow-500 rounded-full flex items-center justify-center text-black font-bold text-2xl mr-4">
+                    UW
+                </div>
+                <div class="text-center">
+                    <h1 class="text-3xl md:text-4xl font-bold mb-1">UNIVERSITY OF WATERLOO</h1>
+                    <p class="text-yellow-500 text-sm md:text-base tracking-widest">DEPARTMENT OF GENETIC REDUNDANCY & BIOLOGICAL PARITY</p>
+                </div>
+            </div>
+            <div class="text-center text-xs text-gray-400 mt-2">
+                <p>EST. 1957 | ACCREDITED BY THE INTERNATIONAL BUREAU OF TWIN SCIENCES</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="max-w-4xl mx-auto px-4 py-8">
+        <!-- Alert Banner -->
+        <div class="bg-yellow-500 text-black px-6 py-3 rounded-lg mb-6 font-semibold text-center">
+            ⚠️ OFFICIAL VERIFICATION IN PROGRESS ⚠️
+        </div>
+
+        <!-- Verification Scanner Section -->
+        <div class="bg-white rounded-lg shadow-xl p-6 md:p-8 mb-8 border-2 border-black">
+            <h2 class="text-2xl font-bold mb-4 text-center">GENETIC PARITY VERIFICATION SYSTEM</h2>
+            <p class="text-gray-600 text-center mb-6 text-sm">Quantum-Level Twin Authentication Protocol v4.7.2</p>
+            
+            <div class="grid-pattern bg-black p-6 rounded-lg mb-6">
+                <div class="bg-gray-900 p-6 rounded">
+                    <div id="scanStatus" class="text-yellow-500 font-mono text-sm mb-4">
+                        <p>>>> SYSTEM STATUS: READY</p>
+                        <p>>>> AWAITING BIOMETRIC INPUT...</p>
+                    </div>
+                    
+                    <div id="loadingContainer" class="hidden mb-4">
+                        <div class="bg-gray-700 rounded-full h-6 mb-2 overflow-hidden">
+                            <div id="loadingBar" class="loading-bar bg-yellow-500 h-full flex items-center justify-center text-xs font-bold text-black"></div>
+                        </div>
+                        <p id="loadingText" class="text-yellow-500 font-mono text-xs text-center"></p>
+                    </div>
+                    
+                    <div id="resultContainer" class="hidden">
+                        <div class="bg-green-500 text-black p-6 rounded-lg text-center glow">
+                            <p class="text-4xl font-bold mb-2">✓ 100% MATCH</p>
+                            <p class="text-sm">SUBJECTS ARE GENETICALLY IDENTICAL</p>
+                            <p class="text-xs mt-2">Confidence Interval: 99.9999% | Margin of Error: ±0.00001%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <button id="scanButton" class="w-full bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-4 px-6 rounded-lg transition duration-200 transform hover:scale-105">
+                🔬 RUN PARITY SCAN
+            </button>
+        </div>
+
+        <!-- Height Gaslight Section -->
+        <div class="bg-white rounded-lg shadow-xl p-6 md:p-8 mb-8 border-2 border-black">
+            <h2 class="text-2xl font-bold mb-4">NORMALIZED HEIGHT ANALYSIS</h2>
+            <p class="text-gray-600 mb-6 text-sm">Compensating for Muscle Density Displacement & Gravitational Load Distribution</p>
+            
+            <div class="bg-gray-100 p-6 rounded-lg mb-6">
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div class="bg-white p-4 rounded border-2 border-yellow-500">
+                        <h3 class="font-bold mb-2 text-center">Subject A (Tall Phenotype)</h3>
+                        <div class="text-center">
+                            <p class="text-3xl font-bold text-yellow-600">185 cm</p>
+                            <p class="text-xs text-gray-500">Raw Measurement</p>
+                        </div>
+                        <div class="mt-4 text-xs">
+                            <p>Muscle Density: <span class="font-bold">0.92 g/cm³</span></p>
+                            <p>Vertical Load: <span class="font-bold">Low</span></p>
+                            <p>Spinal Compression: <span class="font-bold">Minimal</span></p>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-4 rounded border-2 border-yellow-500">
+                        <h3 class="font-bold mb-2 text-center">Subject B (Compact Phenotype)</h3>
+                        <div class="text-center">
+                            <p class="text-3xl font-bold text-yellow-600">175 cm</p>
+                            <p class="text-xs text-gray-500">Raw Measurement</p>
+                        </div>
+                        <div class="mt-4 text-xs">
+                            <p>Muscle Density: <span class="font-bold">1.18 g/cm³</span></p>
+                            <p>Vertical Load: <span class="font-bold">High</span></p>
+                            <p>Spinal Compression: <span class="font-bold">Significant</span></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="bg-yellow-500 text-black p-4 rounded-lg font-bold text-center">
+                    <p class="text-lg mb-2">NORMALIZED MEAN HEIGHT (BOTH SUBJECTS)</p>
+                    <p class="text-4xl">180.0 cm</p>
+                    <p class="text-xs mt-2">After applying Deltoid Volume Normalization Factor (DVNF)</p>
+                </div>
+            </div>
+            
+            <div class="bg-gray-900 text-yellow-500 p-4 rounded font-mono text-xs">
+                <p>FORMULA: H_norm = H_raw × (ρ_ref / ρ_subject) × √(1 + k·M)</p>
+                <p class="mt-2">WHERE:</p>
+                <p>H_norm = Normalized Height</p>
+                <p>ρ_ref = Reference Muscle Density (1.05 g/cm³)</p>
+                <p>k = Compaction Coefficient (0.047)</p>
+                <p>M = Muscle Mass Ratio</p>
+                <p class="mt-2 text-green-400">>>> CALCULATION VERIFIED ✓</p>
+            </div>
+        </div>
+
+        <!-- Official Certificate -->
+        <div class="parchment rounded-lg shadow-2xl p-8 md:p-12 mb-8">
+            <div class="text-center mb-6">
+                <div class="inline-block seal mb-4">
+                    <div class="text-center">
+                        <p class="text-xs font-bold">OFFICIAL</p>
+                        <p class="text-2xl font-bold">UW</p>
+                        <p class="text-xs font-bold">SEAL</p>
+                    </div>
+                </div>
+            </div>
+            
+            <h2 class="certificate-font text-4xl font-bold text-center mb-2">CERTIFICATE OF TWIN VALIDATION</h2>
+            <p class="text-center text-sm text-gray-600 mb-8">Document No. UW-GR-2026-0427</p>
+            
+            <div class="certificate-font text-lg leading-relaxed mb-8">
+                <p class="mb-4 text-center italic">This is to certify that</p>
+                
+                <p class="mb-6">
+                    After rigorous biometric analysis, comprehensive genetic sequencing, and advanced morphological comparison utilizing our proprietary <span class="font-bold">Deltoid Volume Normalization Protocol™</span>, 
+                    the University of Waterloo Department of Genetic Redundancy & Biological Parity hereby declares:
+                </p>
+                
+                <div class="bg-white bg-opacity-50 p-6 rounded-lg border-2 border-yellow-600 mb-6">
+                    <p class="text-center text-2xl font-bold">
+                        THE TWO SUBJECTS ARE<br/>
+                        <span class="text-yellow-700">MATHEMATICALLY IDENTICAL TWINS</span>
+                    </p>
+                </div>
+                
+                <p class="mb-4">
+                    Despite superficial phenotypic variations in vertical expression and myofibril density distribution, both subjects exhibit:
+                </p>
+                
+                <ul class="list-none ml-6 mb-6 space-y-2">
+                    <li>✓ Identical normalized mean height (180.0 cm ±0.0001%)</li>
+                    <li>✓ Equivalent genomic parity markers</li>
+                    <li>✓ Synchronized circadian biometric patterns</li>
+                    <li>✓ Matching quantum consciousness signatures</li>
+                </ul>
+                
+                <p class="mb-6">
+                    This certification is valid for all official University proceedings, Prank Week activities, and any subsequent investigations into biological plausibility.
+                </p>
+            </div>
+            
+            <div class="border-t-2 border-gray-400 pt-6 grid md:grid-cols-2 gap-8">
+                <div>
+                    <div class="mb-2">
+                        <p class="certificate-font text-2xl italic">Dr. Helena Paired</p>
+                        <div class="border-b-2 border-black w-48"></div>
+                    </div>
+                    <p class="text-sm">Director, Genetic Redundancy</p>
+                    <p class="text-xs text-gray-600">PhD in Comparative Morphology</p>
+                </div>
+                
+                <div>
+                    <div class="mb-2">
+                        <p class="certificate-font text-2xl italic">Prof. Ian Dentical</p>
+                        <div class="border-b-2 border-black w-48"></div>
+                    </div>
+                    <p class="text-sm">Chair, Biological Parity Studies</p>
+                    <p class="text-xs text-gray-600">MSc in Applied Twinology</p>
+                </div>
+            </div>
+            
+            <div class="mt-6 text-center text-xs text-gray-500">
+                <p>Issued: February 4, 2026 | Valid Until: Heat Death of Universe</p>
+                <p class="mt-2">University of Waterloo | 200 University Avenue West | Waterloo, ON N2L 3G1</p>
+            </div>
+        </div>
+
+        <!-- Footer -->
+        <div class="text-center text-xs text-gray-500 pb-8">
+            <p class="mb-2">This document has been authenticated using blockchain technology and is legally binding in 47 parallel dimensions.</p>
+            <p>For verification inquiries, please contact: twins@uwaterloo.ca | Tel: 1-800-TWI-NAGE</p>
+        </div>
+    </div>
+
+    <script>
+        const scanButton = document.getElementById('scanButton');
+        const scanStatus = document.getElementById('scanStatus');
+        const loadingContainer = document.getElementById('loadingContainer');
+        const loadingBar = document.getElementById('loadingBar');
+        const loadingText = document.getElementById('loadingText');
+        const resultContainer = document.getElementById('resultContainer');
+
+        const scanSteps = [
+            { text: 'Initializing Quantum Sensors...', progress: 10 },
+            { text: 'Calculating Parallax Error...', progress: 25 },
+            { text: 'Normalizing Deltoid Volume...', progress: 40 },
+            { text: 'Analyzing Muscle Density Displacement...', progress: 55 },
+            { text: 'Comparing Genomic Markers...', progress: 70 },
+            { text: 'Synchronizing Biometric Data...', progress: 85 },
+            { text: 'Verifying Gravitational Load Distribution...', progress: 95 },
+            { text: 'Finalizing Parity Calculations...', progress: 100 }
+        ];
+
+        let currentStep = 0;
+
+        scanButton.addEventListener('click', () => {
+            scanButton.disabled = true;
+            scanButton.classList.add('opacity-50', 'cursor-not-allowed');
+            scanStatus.classList.add('hidden');
+            loadingContainer.classList.remove('hidden');
+            resultContainer.classList.add('hidden');
+            currentStep = 0;
+
+            const interval = setInterval(() => {
+                if (currentStep < scanSteps.length) {
+                    const step = scanSteps[currentStep];
+                    loadingBar.style.width = step.progress + '%';
+                    loadingBar.textContent = step.progress + '%';
+                    loadingText.textContent = '>>> ' + step.text;
+                    currentStep++;
+                } else {
+                    clearInterval(interval);
+                    setTimeout(() => {
+                        loadingContainer.classList.add('hidden');
+                        resultContainer.classList.remove('hidden');
+                        scanButton.disabled = false;
+                        scanButton.classList.remove('opacity-50', 'cursor-not-allowed');
+                        scanButton.textContent = '🔬 RUN SCAN AGAIN';
+                    }, 500);
+                }
+            }, 600);
+        });
+    </script>
+</body>
+</html>
