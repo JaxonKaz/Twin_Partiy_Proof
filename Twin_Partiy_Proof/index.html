@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -91,6 +92,24 @@
 
         .fade-in {
             animation: fadeIn 0.5s ease-out;
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .accordion-content.expanded {
+            max-height: 2500px;
+        }
+
+        .rotate-arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .rotate-arrow.rotated {
+            transform: rotate(180deg);
         }
     </style>
 </head>
@@ -211,7 +230,7 @@
         <div id="certificateSection" class="hidden">
             <div class="parchment rounded-lg shadow-2xl p-8 md:p-12 mb-8 slide-down">
                 <div class="text-center mb-6">
-                    <img src="uw-logo.svg" alt="University of Waterloo Seal" class="w-32 h-32 mx-auto mb-4">
+                    <img src="uw-logo.png" alt="University of Waterloo Seal" class="w-32 h-32 mx-auto mb-4">
                 </div>
                 
                 <h2 class="certificate-font text-4xl font-bold text-center mb-2">CERTIFICATE OF TWIN VALIDATION</h2>
@@ -271,6 +290,140 @@
                 <div class="mt-6 text-center text-xs text-gray-500">
                     <p>Issued: March 11, 2007 | Valid Until: Heat Death of Universe</p>
                     <p class="mt-2">University of Waterloo | 200 University Avenue West | Waterloo, ON N2L 3G1</p>
+                </div>
+            </div>
+
+            <!-- Additional Documentation -->
+            <div class="bg-white rounded-lg shadow-xl p-6 md:p-8 mb-8 border-2 border-black slide-down">
+                <h2 class="text-2xl font-bold mb-6 text-center">📋 ADDITIONAL DOCUMENTATION</h2>
+                
+                <!-- Historical Lore Section -->
+                <div class="mb-6">
+                    <button class="accordion-trigger w-full bg-gray-100 hover:bg-gray-200 p-4 rounded-lg flex justify-between items-center transition duration-200" data-target="lore">
+                        <span class="font-bold text-lg">📜 Historical Records & Timeline</span>
+                        <svg class="w-5 h-5 rotate-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div id="lore" class="accordion-content bg-gray-50 rounded-b-lg">
+                        <div class="p-6 space-y-4">
+                            <div class="border-l-4 border-yellow-500 pl-4 py-2">
+                                <h3 class="font-bold text-base mb-2">🧬 The Womb Partition (2004)</h3>
+                                <p class="text-sm text-gray-700">
+                                    During the initial resource allocation phase, a Bilateral Resource Agreement was struck. Subject Alpha was granted 15% surplus longitudinal bone density (Verticality), while Subject Beta was granted 15% surplus lateral fiber density (Volume). Per the Law of Conservation of Mass, the total biological displacement remains identical.
+                                </p>
+                            </div>
+
+                            <div class="border-l-4 border-red-500 pl-4 py-2 bg-red-50">
+                                <h3 class="font-bold text-base mb-2">⏰ The DST Temporal Paradox (November 4, 2007)</h3>
+                                <p class="text-sm text-gray-700 mb-3">
+                                    <span class="font-bold">Chronological Discrepancy Report:</span> Subjects were delivered on November 4, 2007, exactly 4 minutes and 23 seconds apart. Subject Alpha (Vertical Unit) was recorded as the first arrival. However, due to the termination of Daylight Saving Time (DST) occurring precisely between the two delivery windows, the local clock was reset by 60 minutes.
+                                </p>
+                                <p class="text-sm text-gray-700 mb-3">
+                                    <span class="font-bold">The Resulting Paradox:</span> While Alpha is biologically older by 263 seconds, Beta's legal timestamp is technically 55 minutes earlier than Alpha's. This created a permanent Temporal Loop in the Department of Genetic Redundancy database.
+                                </p>
+                                <div class="bg-white p-3 rounded mt-2">
+                                    <p class="text-xs font-mono text-gray-800 mb-1">DELIVERY_LOG_2007-11-04:</p>
+                                    <p class="text-xs font-mono text-gray-600">Subject Alpha: 01:58:42 EDT</p>
+                                    <p class="text-xs font-mono text-gray-600">Subject Beta: 01:03:05 EST</p>
+                                    <p class="text-xs font-mono text-red-600 mt-1">ERROR: TEMPORAL_PARADOX_DETECTED</p>
+                                </div>
+                                <p class="text-sm text-gray-700 mt-3 italic">
+                                    Under Waterloo Civil Law, this confirms that both subjects are simultaneously each other's older and younger brother. We currently exist in a state of <span class="font-bold">Chronological Superposition</span>; any attempt to determine who is "older" results in a localized logic error.
+                                </p>
+                            </div>
+
+                            <div class="border-l-4 border-yellow-500 pl-4 py-2">
+                                <h3 class="font-bold text-base mb-2">⚖️ The 184.5 cm Normalization Act (2010)</h3>
+                                <p class="text-sm text-gray-700">
+                                    A parental decree established in 2010 to resolve "who is taller" disputes. It states that both units are legally and biologically 184.5 cm regardless of current spinal compression or footwear choice. Any deviation is considered a "user-end rendering error."
+                                </p>
+                            </div>
+
+                            <div class="border-l-4 border-yellow-500 pl-4 py-2">
+                                <h3 class="font-bold text-base mb-2">🪞 The Sears Reflection Incident (2012)</h3>
+                                <p class="text-sm text-gray-700">
+                                    Subjects successfully maintained a 1:1 kinetic mirror simulation for six hours in a department store doorframe. The simulation was only terminated after a security guard attempted to walk through the "glass," resulting in a documented concussion and a formal apology from the Department of Physics.
+                                </p>
+                            </div>
+
+                            <div class="border-l-4 border-yellow-500 pl-4 py-2">
+                                <h3 class="font-bold text-base mb-2">⚡ The Trans-Twin Metabolic Bridge</h3>
+                                <p class="text-sm text-gray-700">
+                                    Our shared nervous system operates on a high-latency synaptic link. Documentation shows that if Subject Alpha consumes caffeine, Subject Beta receives the jitters. Conversely, if Subject Beta performs a heavy squat set, Subject Alpha experiences sympathetic DOMS (Delayed Onset Muscle Soreness) within 4-6 hours.
+                                </p>
+                            </div>
+
+                            <div class="border-l-4 border-yellow-500 pl-4 py-2">
+                                <h3 class="font-bold text-base mb-2">🔍 Optical Refraction & Stature</h3>
+                                <p class="text-sm text-gray-700">
+                                    Observers may perceive a "height difference." This is a documented optical illusion known as the Deltoid Parallax. Because Subject Beta is 22% denser, light bends around his shoulders, creating a downward visual shift. In a vacuum or non-Euclidean space (like the E7 third floor), subjects are visually level at 184.5 cm.
+                                </p>
+                            </div>
+
+                            <div class="border-l-4 border-yellow-500 pl-4 py-2">
+                                <h3 class="font-bold text-base mb-2">💾 Administrative Redundancy (Quest Logic)</h3>
+                                <p class="text-sm text-gray-700">
+                                    The University of Waterloo database cannot support duplicate Primary Keys for a single genetic entity. To prevent a campus-wide server crash, we were assigned separate "alias" names and different degree tracks. We sync all academic data during REM sleep cycles to ensure parity.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- FAQ Section -->
+                <div>
+                    <button class="accordion-trigger w-full bg-gray-100 hover:bg-gray-200 p-4 rounded-lg flex justify-between items-center transition duration-200" data-target="faq">
+                        <span class="font-bold text-lg">❓ Frequently Asked Questions</span>
+                        <svg class="w-5 h-5 rotate-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+                        </svg>
+                    </button>
+                    <div id="faq" class="accordion-content bg-gray-50 rounded-b-lg">
+                        <div class="p-6 space-y-4">
+                            <div class="border-l-4 border-blue-500 pl-4 py-2">
+                                <h3 class="font-bold text-base mb-2">🌀 The "Double-Slit" Experiment</h3>
+                                <p class="text-sm text-gray-700">
+                                    We tried to walk through two different doors at the SLC at the exact same time, and for a split second, a third "Ghost Twin" appeared in the middle. We had to go to the Health Services basement to get the extra soul removed.
+                                </p>
+                            </div>
+
+                            <div class="border-l-4 border-blue-500 pl-4 py-2">
+                                <h3 class="font-bold text-base mb-2">🔤 The "Vowel" Agreement</h3>
+                                <p class="text-sm text-gray-700">
+                                    We actually share a set of vowels. If I use too many 'E's in a sentence, he has to speak in shorthand for the rest of the hour to keep our Phonetic Reserves balanced.
+                                </p>
+                            </div>
+
+                            <div class="border-l-4 border-blue-500 pl-4 py-2">
+                                <h3 class="font-bold text-base mb-2">😴 The "Shared Sleep" Glitch</h3>
+                                <p class="text-sm text-gray-700">
+                                    If one of us pulls an all-nighter at DC, the other one falls into a deep coma wherever they are. It's a power-saving mode. Last week, I fell asleep standing up in the middle of a Tim Hortons line because he decided to grind LeetCode.
+                                </p>
+                            </div>
+
+                            <div class="border-l-4 border-blue-500 pl-4 py-2">
+                                <h3 class="font-bold text-base mb-2">👤 The "Shadow" Protocol</h3>
+                                <p class="text-sm text-gray-700">
+                                    We don't actually have individual shadows. We share one, and it just moves back and forth between us depending on who is talking more. If we're both silent, the shadow disappears entirely.
+                                </p>
+                            </div>
+
+                            <div class="border-l-4 border-blue-500 pl-4 py-2">
+                                <h3 class="font-bold text-base mb-2">📍 The "GPS" Anomaly</h3>
+                                <p class="text-sm text-gray-700">
+                                    Our phones' GPS constantly thinks we're the same person. If we're on opposite sides of campus, Google Maps just shows a single blue dot vibrating at high frequency in the middle of the University Shops Plaza.
+                                </p>
+                            </div>
+
+                            <div class="border-l-4 border-blue-500 pl-4 py-2">
+                                <h3 class="font-bold text-base mb-2">👕 The "Clothing" Law</h3>
+                                <p class="text-sm text-gray-700">
+                                    We don't buy clothes in pairs. We buy one outfit, and through Mitotic Fabric Splitting, it becomes two identical sets the moment we both try to put it on. It saves us a fortune on the HST.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
 
@@ -382,6 +535,21 @@
                 }
             }, 600);
         });
+
+        // Accordion functionality
+        const accordionTriggers = document.querySelectorAll('.accordion-trigger');
+        
+        accordionTriggers.forEach(trigger => {
+            trigger.addEventListener('click', () => {
+                const targetId = trigger.getAttribute('data-target');
+                const content = document.getElementById(targetId);
+                const arrow = trigger.querySelector('.rotate-arrow');
+                
+                content.classList.toggle('expanded');
+                arrow.classList.toggle('rotated');
+            });
+        });
     </script>
 </body>
 </html>
+```
