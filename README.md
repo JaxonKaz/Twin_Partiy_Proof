@@ -20,6 +20,7 @@ This is a satirical, single-file HTML document that generates an "official" twin
 - **Official Certificate** - Complete with fake signatures, seals, and legal-sounding jargon
 - **Progressive Reveal** - Sections appear dynamically as the "scan" progresses
 - **Mobile Responsive** - Perfect for showing skeptics on the fly
+- **QR Code Access** - Just hand someone a card with the QR code. No explanation needed.
 
 ## 🚀 Features
 
@@ -46,17 +47,23 @@ Authentic-looking certificate issued on **March 11, 2007** (Daylight Saving Time
   - Dr. Gene Etic-Clone (PhD in Comparative Morphology)
   - Prof. Cy Amese-Twins (MSc in Applied Twinology)
 
+### 📱 QR Code Distribution
+When someone questions your twin status, don't argue. Don't explain. Just silently hand them a QR code card and walk away. Peak gaslighting efficiency.
+
 ### ⚠️ Legal Disclaimer
 Don't worry, we included a disclaimer so we don't get expelled! It clearly states this is a parody and the Department of Genetic Redundancy & Biological Parity doesn't actually exist.
 
 ## 📁 File Structure
 ```
-twin-parity-proof/
+Twin_Parity_Proof/
 │
-├── index.html                  # Main document (single file!)
-├── uw-logo.png                 # University of Waterloo official logo
-├── vercel.json                 # Vercel deployment config
-└── README.md                   # You are here
+├── Twin_Parity_Proof/
+│   ├── index.html                      # Main document (single file!)
+│   ├── uw-logo.png                     # University of Waterloo official logo
+│   ├── uw-logo.svg                     # UW logo (vector format)
+│   └── qrcode_twinpp.vercel.app.png   # QR code for instant access
+│
+└── README.md                           # You are here
 ```
 
 ## 🛠️ Technologies Used
@@ -90,7 +97,7 @@ vercel
 1. Clone the repository
 ```bash
 git clone https://github.com/JaxonKaz/Twin_Partiy_Proof.git
-cd Twin_Partiy_Proof
+cd Twin_Partiy_Proof/Twin_Parity_Proof
 ```
 
 2. Open `index.html` in your browser
@@ -102,6 +109,15 @@ open index.html
 
 ### View Online
 Simply visit **[twinpp.vercel.app](https://twinpp.vercel.app)** - no installation required!
+
+### QR Code Strategy
+1. Print `qrcode_twinpp.vercel.app.png` on business cards or stickers
+2. When someone asks "Are you guys actually twins?"
+3. Say nothing. Just hand them the QR code.
+4. Walk away mysteriously.
+5. Let the website do the gaslighting for you.
+
+**Pro tip:** Print multiple copies. Laminate them. Keep them in your wallet. This is a lifestyle now.
 
 ## 🎨 Customization
 
@@ -126,14 +142,24 @@ Find these lines in `index.html`:
 <p class="certificate-font text-2xl italic">Prof. Cy Amese-Twins</p>
 ```
 
+### Generate New QR Code
+If you deploy to your own domain:
+```bash
+# Use any QR code generator
+# Point it to your Vercel URL
+# Save as qrcode_yoursite.vercel.app.png
+```
+
 ## 🎭 Prank Tips
 
-1. **Show it casually** - Pull it up on your phone like it's no big deal
-2. **Maintain confidence** - The key to gaslighting is conviction
-3. **Reference the formula** - Point to the Deltoid Volume Normalization Factor™
-4. **Use technical jargon** - "Muscle Density Displacement is well-documented"
-5. **Show the disclaimer last** - Let them believe for as long as possible
-6. **Share the link** - `twinpp.vercel.app` looks way more official than a local file
+1. **The Silent Treatment** - When asked about being twins, just hand them the QR code without a word
+2. **Maintain Confidence** - The key to gaslighting is unwavering conviction
+3. **Reference the Formula** - Point to the Deltoid Volume Normalization Factor™ like it's common knowledge
+4. **Use Technical Jargon** - "Muscle Density Displacement is well-documented in the literature"
+5. **Show the Disclaimer Last** - Let them believe for as long as possible
+6. **Print QR Codes in Bulk** - Hand them out like business cards at networking events
+7. **Act Offended** - "Are you questioning the University's Department of Genetic Redundancy?"
+8. **Double Down** - When caught, claim you're actually triplets and the third one is in the database
 
 ## ⚖️ Legal
 
@@ -145,6 +171,7 @@ This is a **PARODY** created for entertainment purposes only.
 - The Deltoid Volume Normalization Factor™ is completely fictional
 - Dr. Gene Etic-Clone and Prof. Cy Amese-Twins are made-up names
 - Please don't sue us, we're just students with too much time
+- The QR code is just a link to this website, not an actual verification system
 
 ## 🤝 Contributing
 
@@ -156,7 +183,10 @@ Some ideas:
 - Add sound effects to the scanner
 - Generate downloadable PDF certificate
 - Multiple language support (for international gaslighting)
-- Add a QR code generator for "official verification"
+- Animated QR code scanner effect
+- Fake "blockchain verification" badge
+- Integration with a fake "Twin Registry Database"
+- Email notification system for "verification alerts"
 
 ## 📊 Stats
 
@@ -171,16 +201,28 @@ MIT License - Feel free to gaslight your own universities!
 
 Made with ❤️ (and questionable math) by two UW students who should have been studying instead.
 
-**Subject A** - The Tall One (193cm)  
-**Subject B** - The Compact One (176cm)
+**Jaxon Kazakevicius** - The Tall One (193cm)  
+**Caleb Bellsmith** - The Compact One (176cm)
+
+*Status: Mathematically Identical (Certified)*
 
 ## 🙏 Acknowledgments
 
 - University of Waterloo for being good sports about Prank Week
 - The International Bureau of Twin Sciences (totally real organization)
 - Everyone who believed us for even a second
+- Everyone who scanned the QR code out of sheer curiosity
 - Claude AI for helping us build this masterpiece of absurdity
 - Vercel for free hosting of our ridiculous pranks
+- That one professor who played along and asked for our "twin verification papers"
+
+## 🎯 Success Stories
+
+> *"I scanned the QR code and now I'm questioning everything I know about genetics."* - Random Student, 2026
+
+> *"The certificate looks more official than my actual degree."* - UW Alumnus
+
+> *"I showed this to my biology professor and they're still confused."* - Biology Major
 
 ---
 
@@ -197,14 +239,35 @@ Made with ❤️ (and questionable math) by two UW students who should have been
 
 *(Add screenshots of your portal here)*
 
-1. Initial Scanner Interface
-2. Progressive Height Analysis
-3. Final Certificate
-4. Mobile View
+<img width="1907" height="935" alt="image" src="https://github.com/user-attachments/assets/743717d9-0de0-4920-89b0-22c997e350a8" />
+
+<img width="908" height="753" alt="image" src="https://github.com/user-attachments/assets/f5bf37b0-7190-4a58-8f37-0665c599be10" />
+
+<img width="668" height="872" alt="image" src="https://github.com/user-attachments/assets/3b19dc27-94cf-49da-8652-59ba72399ca9" />
+
+<img width="669" height="221" alt="image" src="https://github.com/user-attachments/assets/ecf40ea1-4b8e-4f7c-9f55-b3f10ee3bf51" />
+
+<img width="466" height="467" alt="image" src="https://github.com/user-attachments/assets/4b0e5f07-e851-41b1-8403-bc86740828b4" />
+
 
 </details>
 
 ---
 
 **Live Site:** [twinpp.vercel.app](https://twinpp.vercel.app)  
-**Repository:** [github.com/JaxonKaz/Twin_Partiy_Proof](https://github.com/JaxonKaz/Twin_Partiy_Proof)
+**Repository:** [github.com/JaxonKaz/Twin_Partiy_Proof](https://github.com/JaxonKaz/Twin_Partiy_Proof)  
+**QR Code:** Scan to verify twin status instantly 📱
+
+---
+
+### 🎪 Fun Facts
+
+- The document was issued on March 11, 2007, the day Daylight Saving Time started that year
+- The "Deltoid Volume Normalization Factor" has a 100% success rate (in our sample size of 2)
+- Our height difference of 17cm becomes 0cm after normalization (mathematically sound*)
+- *Not actually mathematically sound
+- Some people have actually tried to verify the "Department of Genetic Redundancy" on the UW website
+
+---
+
+**Disclaimer:** No twins were harmed in the making of this prank. Actual genetic science was thoroughly ignored.
