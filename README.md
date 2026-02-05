@@ -1,6 +1,8 @@
 # UW Official Twin Verification Portal 🎓👯
 
-A hilariously over-engineered "official" document proving that two students with a 17cm height difference are "mathematically identical twins" using questionable science and the power of the **Deltoid Volume Normalization Factor™**.
+An absurdly official-looking website that "proves" two guys with a 17cm height difference are identical twins through completely made-up math and something called the **Deltoid Volume Normalization Factor™**.
+
+Created for University of Waterloo Prank Week 2026
 
 Created for University of Waterloo Prank Week 2026.
 
