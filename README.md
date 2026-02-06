@@ -41,7 +41,7 @@ Progressive display of biometric data showing how two different heights become "
 - The completely made-up **Deltoid Volume Normalization Factor (DVNF)**
 
 ### 📜 Official Certificate
-Authentic-looking certificate issued on **March 11, 2007** (Daylight Saving Time day for maximum confusion) featuring:
+Authentic-looking certificate issued on **November 4, 2007** (Daylight Saving Time day for maximum confusion) featuring:
 - University of Waterloo official logo
 - Golden verification seal
 - Signatures from prestigious academics:
@@ -134,7 +134,7 @@ Find these lines in `index.html`:
 
 ### Change Issue Date
 ```html
-<p>Issued: March 11, 2007 | Valid Until: Heat Death of Universe</p>
+<p>Issued: November 4, 2007 | Valid Until: Heat Death of Universe</p>
 ```
 
 ### Change Doctor Names
@@ -263,7 +263,7 @@ Made with ❤️ (and questionable math) by two UW students who should have been
 
 ### 🎪 Fun Facts
 
-- The document was issued on March 11, 2007, the day Daylight Saving Time started that year
+- The document was issued on November 4, 2007, the day Daylight Saving Time started that year
 - The "Deltoid Volume Normalization Factor" has a 100% success rate (in our sample size of 2)
 - Our height difference of 17cm becomes 0cm after normalization (mathematically sound*)
 - *Not actually mathematically sound
